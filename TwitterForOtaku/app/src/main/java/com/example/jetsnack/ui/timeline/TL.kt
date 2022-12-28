@@ -67,7 +67,7 @@ private fun TLCollectionList(
     modifier: Modifier = Modifier
 ) {
     var filtersVisible by rememberSaveable { mutableStateOf(false) }
-    SnackGrid(snackCollection = snackCollections[1], onSnackClick = onSnackClick) // データ構造が謎
+    SnackGrid(snackCollection = snackCollections[1], onSnackClick = onSnackClick) // なぜリストのリストの構造になっているの
     AnimatedVisibility(
         visible = filtersVisible,
         enter = slideInVertically() + expandVertically(

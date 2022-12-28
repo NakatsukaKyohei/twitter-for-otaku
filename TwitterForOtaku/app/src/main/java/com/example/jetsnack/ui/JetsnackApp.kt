@@ -29,7 +29,7 @@ import com.example.jetsnack.ui.components.JetsnackSnackbar
 import com.example.jetsnack.ui.home.HomeSections
 import com.example.jetsnack.ui.home.JetsnackBottomBar
 import com.example.jetsnack.ui.home.addHomeGraph
-import com.example.jetsnack.ui.snackdetail.SnackDetail
+import com.example.jetsnack.ui.imagedetail.ImageDetail
 import com.example.jetsnack.ui.theme.JetsnackTheme
 
 @Composable
@@ -85,6 +85,6 @@ private fun NavGraphBuilder.jetsnackNavGraph(
     ) { backStackEntry ->
         val arguments = requireNotNull(backStackEntry.arguments)
         val snackId = arguments.getLong(MainDestinations.SNACK_ID_KEY)
-        SnackDetail(snackId, upPress)
+        ImageDetail(snackId, upPress)
     }
 }

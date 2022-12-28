@@ -65,11 +65,15 @@ fun SnackItem(
     onSnackClick: (Long) -> Unit, // where onClick?
     modifier: Modifier = Modifier
 ) {
+    val context = LocalContext.current
     SnackImage(
         imageUrl = snack.imageUrl,
         elevation = 4.dp,
         contentDescription = null,
-        modifier = Modifier.size(160.dp)
+        modifier = Modifier
+            .size(160.dp)
+            .clickable { onSnackClick(snack.id)
+            }
     )
 }
 

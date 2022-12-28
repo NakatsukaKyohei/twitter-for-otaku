@@ -88,7 +88,7 @@ enum class HomeSections(
     val icon: ImageVector,
     val route: String
 ) {
-    TL(R.string.home_tl, Icons.Outlined.Home, "home/feed"),
+    TL(R.string.home_tl, Icons.Outlined.Home, "home/tl"),
     SEARCH(R.string.home_search, Icons.Outlined.Search, "home/search"),
     CART(R.string.home_cart, Icons.Outlined.ShoppingCart, "home/cart"),
     PROFILE(R.string.home_profile, Icons.Outlined.AccountCircle, "home/profile")
