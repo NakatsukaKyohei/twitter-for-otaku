@@ -17,7 +17,7 @@
     <string name="label_back">Back</string>
 
     <!-- Home Tabs -->
-    <string name="home_feed">Home</string>
+    <string name="home_tl">TL</string>
     <string name="home_search">Search</string>
     <string name="home_cart">My Cart</string>
     <string name="home_profile">Profile</string>

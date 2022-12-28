@@ -24,13 +24,7 @@ import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.SpringSpec
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScope
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
@@ -53,11 +47,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.layout.Layout
-import androidx.compose.ui.layout.MeasureResult
-import androidx.compose.ui.layout.MeasureScope
-import androidx.compose.ui.layout.Placeable
-import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.layout.*
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -73,14 +63,14 @@ import com.example.jetsnack.ui.components.JetsnackSurface
 import com.example.jetsnack.ui.home.cart.Cart
 import com.example.jetsnack.ui.home.search.Search
 import com.example.jetsnack.ui.theme.JetsnackTheme
-import java.util.Locale
+import java.util.*
 
 fun NavGraphBuilder.addHomeGraph(
     onSnackSelected: (Long, NavBackStackEntry) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    composable(HomeSections.FEED.route) { from ->
-        Feed(onSnackClick = { id -> onSnackSelected(id, from) }, modifier)
+    composable(HomeSections.TL.route) { from ->
+        TL(onSnackClick = { id -> onSnackSelected(id, from) }, modifier)
     }
     composable(HomeSections.SEARCH.route) { from ->
         Search(onSnackClick = { id -> onSnackSelected(id, from) }, modifier)
@@ -98,7 +88,7 @@ enum class HomeSections(
     val icon: ImageVector,
     val route: String
 ) {
-    FEED(R.string.home_feed, Icons.Outlined.Home, "home/feed"),
+    TL(R.string.home_tl, Icons.Outlined.Home, "home/feed"),
     SEARCH(R.string.home_search, Icons.Outlined.Search, "home/search"),
     CART(R.string.home_cart, Icons.Outlined.ShoppingCart, "home/cart"),
     PROFILE(R.string.home_profile, Icons.Outlined.AccountCircle, "home/profile")

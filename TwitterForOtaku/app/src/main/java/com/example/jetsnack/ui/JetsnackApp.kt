@@ -21,13 +21,9 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material.SnackbarHost
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavBackStackEntry
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavType
+import androidx.navigation.*
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
-import androidx.navigation.navigation
 import com.example.jetsnack.ui.components.JetsnackScaffold
 import com.example.jetsnack.ui.components.JetsnackSnackbar
 import com.example.jetsnack.ui.home.HomeSections
@@ -79,7 +75,7 @@ private fun NavGraphBuilder.jetsnackNavGraph(
 ) {
     navigation(
         route = MainDestinations.HOME_ROUTE,
-        startDestination = HomeSections.FEED.route
+        startDestination = HomeSections.TL.route
     ) {
         addHomeGraph(onSnackSelected)
     }
